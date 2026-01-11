@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Essentials® - Motion crafted</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #ffffff; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 28px 70px; 
+            background: white; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03); 
+        }
+        .logo { font-size: 15px; font-weight: 600; color: #000; letter-spacing: -0.02em; }
+        .nav-links { display: flex; gap: 36px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #999; font-size: 15px; transition: color 0.2s; letter-spacing: -0.01em; }
+        .nav-links a:hover { color: #000; }
+
+        .hero { 
+            padding: 90px 70px 60px; 
+            max-width: 1400px; 
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 { 
+            font-size: 52px; 
+            font-weight: 800; 
+            letter-spacing: -0.04em; 
+            line-height: 1.15; 
+            margin: 0;
+        }
+        .hero h2 { 
+            font-size: 52px; 
+            font-weight: 300; 
+            color: #b0b0b0; 
+            letter-spacing: -0.04em; 
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        /* VIDEO STYLES */
+        .video-container { 
+            margin: 0 auto 80px; 
+            background: #ececec; 
+            border-radius: 12px; 
+            aspect-ratio: 16/9; 
+            max-width: 1400px; 
+            width: calc(100% - 140px); 
+            position: relative; 
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .video-container iframe, .portfolio-item iframe { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; 
+        }
+
+        .profile-section { 
+            padding: 80px 70px 60px; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+        
+        .profile-header { 
+            display: flex; 
+            gap: 20px; 
+            margin-bottom: 70px; 
+        }
+        .profile-image { 
+            width: 48px; 
+            height: 48px; 
+            background: #e5e5e5; 
+            border-radius: 50%; 
+            flex-shrink: 0; 
+        }
+        .profile-info h3 { 
+            font-size: 17px; 
+            font-weight: 700; 
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
+        }
+        .profile-info p { 
+            color: #666; 
+            font-size: 15px; 
+            max-width: 340px;
+            letter-spacing: -0.01em;
+        }
+
+        .portfolio-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 32px; 
+            margin-bottom: 50px; 
+            width: 100%; 
+        }
+        
+        .portfolio-item-wrapper {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .portfolio-item-wrapper:nth-child(1) { animation-delay: 0.1s; }
+        .portfolio-item-wrapper:nth-child(2) { animation-delay: 0.2s; }
+        .portfolio-item-wrapper:nth-child(3) { animation-delay: 0.3s; }
+        .portfolio-item-wrapper:nth-child(4) { animation-delay: 0.4s; }
+        
+        .portfolio-item { 
+            background: #ececec; 
+            border-radius: 10px; 
+            aspect-ratio: 16/9; 
+            position: relative; 
+            overflow: hidden; 
+            margin-bottom: 12px;
+            transition: transform 0.25s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .portfolio-info h4 { 
+            font-size: 16px; 
+            font-weight: 700; 
+            margin-bottom: 3px;
+            letter-spacing: -0.02em;
+        }
+        .portfolio-info p { 
+            font-size: 14px; 
+            color: #999;
+            letter-spacing: -0.01em;
+        }
+
+        .testimonials { 
+            padding: 80px 70px 70px; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            text-align: center;
+        }
+        .testimonials h2 { 
+            font-size: 44px; 
+            font-weight: 800; 
+            margin: 0; 
+            letter-spacing: -0.03em; 
+        }
+        .testimonials .subtitle { 
+            font-size: 44px; 
+            color: #b0b0b0; 
+            font-weight: 300; 
+            margin: 0 0 70px 0; 
+            letter-spacing: -0.03em; 
+        }
+        .testimonial-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 24px; 
+            margin-bottom: 50px; 
+            width: 100%; 
+        }
+        .testimonial-card { 
+            background: #f7f7f7; 
+            padding: 32px 26px; 
+            border-radius: 10px; 
+            text-align: left; 
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.25s ease;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+        }
+        .testimonial-card p { 
+            color: #666; 
+            font-size: 15px; 
+            line-height: 1.65; 
+            padding-bottom: 32px;
+            letter-spacing: -0.01em;
+        }
+        .testimonial-author { 
+            font-weight: 700; 
+            font-size: 15px;
+            letter-spacing: -0.02em;
+        }
+        .testimonial-role { 
+            font-size: 14px; 
+            color: #999;
+            letter-spacing: -0.01em;
+        }
+
+        .contact-section { 
+            padding: 100px 70px; 
+            text-align: center; 
+            max-width: 1400px; 
+            margin: 0 auto 80px;
+        }
+        .contact-section h2 { 
+            font-size: 44px; 
+            font-weight: 800; 
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+        .contact-section p { 
+            font-size: 17px; 
+            color: #666; 
+            margin-bottom: 40px; 
+            max-width: 600px; 
+            margin-left: auto; 
+            margin-right: auto;
+            letter-spacing: -0.01em;
+        }
+        .contact-button { 
+            display: inline-block; 
+            padding: 16px 40px; 
+            background: #000; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            transition: all 0.25s ease;
+            letter-spacing: -0.01em;
+        }
+        .contact-button:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+
+        footer { 
+            padding: 60px 70px 30px; 
+            border-top: 1px solid #f0f0f0; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+        .footer-content { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            margin-bottom: 50px; 
+        }
+        .footer-logo { 
+            font-size: 32px; 
+            font-weight: 300; 
+            color: #e0e0e0; 
+            letter-spacing: 10px; 
+        }
+        .footer-links { 
+            display: flex; 
+            gap: 70px; 
+        }
+        .footer-column h5 { 
+            font-size: 14px; 
+            font-weight: 700; 
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+        .footer-column ul { 
+            list-style: none; 
+        }
+        .footer-column li {
+            margin-bottom: 6px;
+        }
+        .footer-column a { 
+            text-decoration: none; 
+            color: #999; 
+            font-size: 14px; 
+            line-height: 1.7; 
+            transition: color 0.2s;
+            letter-spacing: -0.01em;
+        }
+        .footer-column a:hover { 
+            color: #000; 
+        }
+        .copyright { 
+            text-align: center; 
+            color: #ccc; 
+            font-size: 10px; 
+            padding-top: 30px; 
+            line-height: 1.6; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #showreel {
+            scroll-margin-top: -200px;
+        }
+
+        #projects, #feedback, #contact {
+            scroll-margin-top: 100px;
+        }
+
+        @media (max-width: 1024px) {
+            .portfolio-grid, .testimonial-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            nav, .hero, .profile-section, .testimonials, footer { padding-left: 24px; padding-right: 24px; }
+            .video-container { width: calc(100% - 48px); }
+            .contact-section { padding: 80px 24px; }
+            .hero h1, .hero h2 { font-size: 28px; }
+            .testimonials h2, .testimonials .subtitle { font-size: 32px; }
+            .footer-links { flex-direction: column; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Media Essentials®</div>
+        <ul class="nav-links">
+            <li><a href="#showreel">Showreel</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="showreel">
+        <h1>Motion crafted.</h1>
+        <h2>Showreel by Jonas Hempel.</h2>
+    </section>
+
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/Q_ROGVLc4TA?si=RL8lqn0ZqW1c3yld" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <section class="profile-section" id="projects">
+        <div class="profile-header">
+            <div class="profile-image"></div>
+            <div class="profile-info">
+                <h3>Jonas Hempel</h3>
+                <p>A selection of my best work in motion design and video editing, created for brands and artists worldwide.</p>
+            </div>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Q_ROGVLc4TA?si=RL8lqn0ZqW1c3yld" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="portfolio-info"><h4>Event Promo Teaser</h4><p>March 2025</p></div>
+            </div>
+
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Q_ROGVLc4TA?si=RL8lqn0ZqW1c3yld" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="portfolio-info"><h4>Brand Identity Opener</h4><p>August 2024</p></div>
+            </div>
+
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Q_ROGVLc4TA?si=RL8lqn0ZqW1c3yld" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="portfolio-info"><h4>Social Ad Spot</h4><p>November 2025</p></div>
+            </div>
+
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Q_ROGVLc4TA?si=RL8lqn0ZqW1c3yld" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="portfolio-info"><h4>Short Film Credits</h4><p>January 2026</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="feedback">
+        <h2>Client stories</h2>
+        <p class="subtitle">Feedback from collaborators</p>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>Jonas elevates every project. Fast, reliable, amazing visuals.</p>
+                <div>
+                    <div class="testimonial-author">Alex B.</div>
+                    <div class="testimonial-role">Producer</div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>Seamlessly blends creativity with technical precision.</p>
+                <div>
+                    <div class="testimonial-author">Marie S.</div>
+                    <div class="testimonial-role">Creative Director</div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>Fantastic editor, our campaigns stand out now.</p>
+                <div>
+                    <div class="testimonial-author">Chris L.</div>
+                    <div class="testimonial-role">Marketing Manager</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2>Let's create something amazing</h2>
+        <p>Ready to bring your vision to life? Get in touch and let's discuss how we can elevate your next project with stunning motion design.</p>
+        <a href="#" class="contact-button">Start Your Project – Free Consultation</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">M&A</div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="#showreel">Showreel</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Info</h5>
+                    <ul>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="imprint.html">Imprint</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Connect</h5>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">© 2024-2026<br>All Rights Reserved</div>
+    </footer>
+</body>
+</html>
