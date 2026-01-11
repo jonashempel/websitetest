@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprint | Media Essentials®</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #444;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 70px;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .logo {
+            font-size: 15px;
+            font-weight: 600;
+            color: #000;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            color: #333;
+        }
+
+        .back-link {
+            color: #999;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+            letter-spacing: -0.01em;
+        }
+
+        .back-link:hover {
+            color: #000;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 70px 100px;
+        }
+
+        .header {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 12px;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 15px;
+            letter-spacing: -0.01em;
+        }
+
+        .content-box {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        .content-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .content-section p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+        }
+
+        .content-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-section strong {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .content-section a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            transition: border-color 0.2s;
+        }
+
+        .content-section a:hover {
+            border-bottom-color: #000;
+        }
+
+        footer {
+            padding: 60px 70px 30px;
+            border-top: 1px solid #f0f0f0;
+            max-width: 1400px;
+            margin: 80px auto 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 32px;
+            font-weight: 300;
+            color: #e0e0e0;
+            letter-spacing: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 70px;
+        }
+
+        .footer-column h5 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 6px;
+        }
+
+        .footer-column a {
+            text-decoration: none;
+            color: #999;
+            font-size: 14px;
+            line-height: 1.7;
+            transition: color 0.2s;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-column a:hover {
+            color: #000;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #ccc;
+            font-size: 10px;
+            padding-top: 30px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 24px 24px;
+            }
+
+            .container {
+                padding: 60px 24px 80px;
+            }
+
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .header p {
+                font-size: 14px;
+            }
+
+            .content-section h2 {
+                font-size: 18px;
+            }
+
+            .content-section p {
+                font-size: 14px;
+            }
+
+            footer {
+                padding: 60px 24px 30px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Media Essentials®</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Imprint</h1>
+            <p>Information according to § 5 German Digital Services Act (Digitale-Dienste-Gesetz)</p>
+        </div>
+
+        <div class="content-box">
+            <div class="content-section">
+                <h2>Service Provider</h2>
+                <p>
+                    <strong>Jonas Hempel</strong><br>
+                    Matrosenweg 11<br>
+                    18147 Rostock<br>
+                    Germany
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>Contact</h2>
+                <p>
+                    <strong>Phone:</strong> <a href="tel:+4915168445724">+49 151 68445724</a><br>
+                    <strong>Email:</strong> <a href="mailto:contact@media-essentials.com">contact@media-essentials.com</a>
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>VAT Identification Number</h2>
+                <p>
+                    According to § 27a German VAT Act:<br>
+                    <strong>081/230/04885</strong>
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>Editorially Responsible</h2>
+                <p>
+                    According to § 18 para. 2 German Media State Treaty (MStV):<br>
+                    <strong>Jonas Hempel</strong><br>
+                    Matrosenweg 11<br>
+                    18147 Rostock
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">M&A</div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="index.html#showreel">Showreel</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Info</h5>
+                    <ul>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="imprint.html">Imprint</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Connect</h5>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">© 2024-2026<br>All Rights Reserved</div>
+    </footer>
+</body>
+</html>
